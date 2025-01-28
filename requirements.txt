@@ -10,3 +10,4 @@ qdrant_client
 langchain_text_splitters
 langchain_qdrant
 langchain_core
+streamlit-chat
