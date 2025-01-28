@@ -112,7 +112,7 @@ def QA_Chain_Retrieval(query, qdrant_vectordb):
 
         # Prompt template string
         prompt_str = """
-        Answer the user question based only on the following context:
+        you are expert chatbot assistant. you cannot generate response other than provided context. if the response is not in the provided context then print("For this query there is no information in the uploaded documents.")
         {context}
 
         Question: {question}
@@ -122,7 +122,7 @@ def QA_Chain_Retrieval(query, qdrant_vectordb):
         _prompt = ChatPromptTemplate.from_template(prompt_str)
         
         # Set the number of chunks to retrieve
-        num_chunks = 3
+        num_chunks = 10
         
         # Set up the retriever
         retriever = qdrant_vectordb.as_retriever(
